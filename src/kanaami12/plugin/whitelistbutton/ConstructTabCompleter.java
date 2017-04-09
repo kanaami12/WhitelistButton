@@ -16,7 +16,7 @@ public class ConstructTabCompleter implements TabCompleter{
 		if (sender instanceof Player && args.length == 1) {
 			tab.add("add");
 			tab.add("remove");
-			return tab;
+			return tab;			//タブ補完
 		}
 		
 		return tab;
