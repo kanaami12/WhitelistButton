@@ -12,13 +12,16 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class MyListener implements Listener {
 	
 	private Main plugin = Main.plugin;
-	public static boolean isAdded = false;
+	public static boolean isAdded = false;	//使ってない。
 	
+	/*
+	 * プレイヤーがクリックしたときのイベント。(ignoreCancelled = true)にすることで空気をクリックしたとき、無視するようになる。
+	 */
 	@EventHandler(ignoreCancelled = true)
 	public void onCick(PlayerInteractEvent event){
 		if(event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
 			Block block = event.getClickedBlock();
-			Material material = block.getType();
+			Material material = block.getType();				//ブロックの種類はblock.getType()で返されるMaterialで判断する。
 			if(material.equals(Material.WOOD_BUTTON) || material.equals(Material.STONE_BUTTON)){
 				Player player = event.getPlayer();
 				

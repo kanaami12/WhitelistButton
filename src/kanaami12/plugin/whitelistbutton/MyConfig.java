@@ -12,11 +12,13 @@ public class MyConfig extends Main{
 	public static Main plugin = Main.plugin;
 	public static ArrayList<Location> locations = new ArrayList<>();
 	
-	
+	/*
+	 * configをロードする
+	 */
 	public static void loadConfig(){
-		plugin.reloadConfig();
+		plugin.reloadConfig();													//configをロードする
 		locations = new ArrayList<>();
-		locations = (ArrayList<Location>)plugin.getConfig().get("locations");
+		locations = (ArrayList<Location>)plugin.getConfig().get("locations");	//configからlocationsパスにある値を取得
 		if(locations == null){
 			locations = new ArrayList<>();
 		}
@@ -32,7 +34,7 @@ public class MyConfig extends Main{
 		
 		locations.add(loc);
 		plugin.getConfig().set("locations", null);
-		plugin.getConfig().set("locations", locations);
+		plugin.getConfig().set("locations", locations);							//locationsパスに値を保存
 		plugin.saveConfig();
 		
 		player.sendMessage(Main.prefix + ChatColor.GREEN + "ボタンを設定しました。");
