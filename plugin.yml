@@ -1,0 +1,11 @@
+name: WhitelistButton
+version: 1.0.0
+main: kanaami12.plugin.whitelistbutton.Main
+commands:
+   whitelistbutton:
+      description: Add a whitelist button
+      usage: /<command> [player]
+      aliases: wb
+      default: op
+      permission: whitelistbutton.command
+      permission-message: You don't have <permission>
